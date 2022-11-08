@@ -1,0 +1,47 @@
+body {
+    margin: 0 0 0 0;
+    padding: 0 0 0 0;
+}
+
+span{
+    overflow-wrap: break-word;
+}
+
+img {
+    width:100%;
+}
+
+#one {
+    background-color: #ff8888;
+}
+
+#list {
+    background-color: #eeee55;
+}
+.clearfix {
+    display: block;
+}
+
+.clearfix:before {
+    content: "";
+    display: block;
+    clear: both;
+}
+
+.clearfix:after {
+    content: "";
+    display: block;
+    clear: both;
+}
+
+.clearfix.align-left > *{
+    float: left;
+}
+.clearfix.align-right > *{
+    float: right;
+}
+
+.unit {
+    width:40%;
+    padding: 0 5%;
+}
