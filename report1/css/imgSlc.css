@@ -1,3 +1,27 @@
+/*ラジオボタンの見た目*/
+.imageSelector>input[type="radio"][id*="imgSlc"]::before,
+.imageSelector>input[type="radio"][id*="imgSlc"]::after {
+    content: "";
+    height: 100%;
+    aspect-ratio: 1 / 1;
+    position: absolute;
+    inset: 50% auto auto 50%;
+    transform: translateX(-50%) translateY(-50%);
+    
+    border-radius: 50%;
+    background-color: white;
+}
+
+.imageSelector>input[type="radio"][id*="imgSlc"]::after {
+    opacity: 0;
+    transition: opacity 0.48s;
+    background-color: gray;
+}
+
+.imageSelector>input[type="radio"][id*="imgSlc"]:checked::after {
+    opacity: 1;
+}
+
 .imageSelector {
     display: block;
     position: relative;
@@ -18,6 +42,8 @@
     width: calc(100% / var(--amount));
     pointer-events: none;
     z-index: 3;
+
+    accent-color: gray;
 }
 
 .imageSelector>div:not(.img) {
@@ -25,12 +51,18 @@
     min-width: 1em;
     width: 10%;
     height: 100%;
-    opacity: .5;
+    opacity: .3;
     z-index: 2;
 
-    background-image: url("../image/ワイン.jpg");
+    transition: opacity 0.24s;
+
+    background-image: url("../image/arrow.jpg");
     background-repeat: no-repeat;
     background-size: 100% 100%;
+}
+
+.imageSelector:hover>div:not(.img){
+    opacity: .9;
 }
 
 .imageSelector>div:not(.img)>label{
@@ -65,8 +97,7 @@
 
 .imageSelector>div.img {
     width: 100%;
-    position: relative;
-    z-index: 1;
+    position: initial;
 }
 
 .imageSelector>div.img::before{
