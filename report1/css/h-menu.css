@@ -1,31 +1,64 @@
 :root {
     --default-duration: 0.24s;
-}
-
-label.h-menu{
-    position: relative;
+    --h-menu-color: rgba(110, 219, 249, 0.8)
 }
 
 input[type="checkbox"]#h-menu {
     display:none;
+    opacity: 0;
+    visibility: hidden;
+    height: 0;
 }
 
+header{
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-image: url("../image/640x640_rect_d72a707c331535c4da2af4f1cd6001d3.jpg");
+}
+
+header>*{
+    position: absolute;
+}
+
+header>.h-menu.title {
+    margin: 0;
+    width: 0;
+    height: 100%;
+    inset: 0 auto auto 100%;
+    transform: translateX(-100%);
+    background-color: var(--h-menu-color);
+    overflow: hidden;
+    transition: var(--default-duration);
+}
+
+input[type="checkbox"]#h-menu:checked+header>.h-menu.title {
+    width: 50%;
+}
+
+
 /*icon*/
+header>label.h-menu.icon {
+    display: absolute;
+    aspect-ratio: 9 / 10;
+    min-width: 36px;
+    min-height: 40px;
+    height:100%;
+    left: 100%;
+    transform: translateX(-100%);
+}
 label.h-menu .icon {
-    /*background-color: bisque;*/
+    all:inherit;
     transition-property: background-color;
     transition-duration: 0.10s;
     transition-delay: 0.14s;
-    background-color: rgba(110, 219, 249, 0.8);
-    width: 36px;
-    height: 40px;
-    position: relative;
+    background-color: var(--h-menu-color);
     z-index: 100;
+
+    right: 100%;
 }
 
 input[type="checkbox"]#h-menu:checked+* label.h-menu .icon{
     transition-delay: 0s;
-    background-color: initial;
 }
 
 label.h-menu .icon>.bar {
@@ -81,7 +114,6 @@ nav.side-menu {
     height: 100%;
     position: fixed;
     z-index: 49;
-    top: 0;
     left: 0;
     overflow-x: hidden;
     pointer-events: none;
@@ -92,8 +124,7 @@ input[type="checkbox"]#h-menu:checked~nav.side-menu {
 }
 
 nav.side-menu .content {
-    /*background-color: bisque;*/
-    background-color: rgba(110, 219, 249, 0.8);
+    background-color: var(--h-menu-color);
     left: 100%;
     position: relative;
     transform: translateX(-100%);
@@ -102,7 +133,7 @@ nav.side-menu .content {
     height: 100%;
     transition: width var(--default-duration);
     z-index: 50;
-    overflow-x: hidden;
+    overflow: hidden;
 }
 
 input[type="checkbox"]#h-menu:checked~nav.side-menu .content {
@@ -110,10 +141,10 @@ input[type="checkbox"]#h-menu:checked~nav.side-menu .content {
 }
 
 label.h-menu.mask {
+    position: absolute;
+    left: 0;
     height: 100%;
     width: 100%;
-    position: absolute;
-    display: none;
     pointer-events: none;
 }
 

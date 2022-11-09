@@ -4,8 +4,10 @@
 
 body {
     position: relative;
-    margin: 0;
+    margin: 0 auto;
     padding: 0;
+
+    max-width: 960px;
     height: 100%;
 }
 
@@ -18,9 +20,9 @@ div#mainContent, footer {
 }
 
 header {
-    width: 100%;
+    inset: 0 0 auto 0;
     height: 10vh;
-    display:inline-block;
+    display: block;
     position: fixed;
     z-index: 50;
 }
@@ -32,13 +34,16 @@ header+div#header_offset {
     width: 100%;
     opacity: 0;
 }
-
+/*
 header > *:nth-child(1){
-    float: left;
-}
+    position: absolute;
+    width: 100%;
+    height: 100%;
+}*/
 
 header > *:nth-child(3){
-    float: right;
+    inset: 0 0 0 auto;
+    height: 100%;
 }
 
 div#mainContent {
@@ -94,12 +99,12 @@ div#mainContent>div {
 }
 
 .headline {
-    --height: calc(var(--height, 3em) * .9);
+    --height: calc(var(--height, 3em) - 1px);
     
     width: 60%;
     height: var(--height);
     border-bottom: 1px solid gray;
-    margin-bottom: calc(calc(var(--height) / 9) - 1px);
+    margin: 1.5em 0;
 }
 
 div#mainContent>input[type="radio"][id^="target "]{
@@ -174,6 +179,7 @@ div#mainContent>div:not(.headline){
     letter-spacing: -1em;
     display: flex;
     align-items: flex-start;
+    justify-content: stretch;
 }
 
 div#mainContent>div:not(.headline)>*{
@@ -192,11 +198,9 @@ div#mainContent>div.tgt2:nth-child(4n+14):not(.headline){
 }
 
 div#mainContent>div:not(.headline)>*:not(.imageSelector){
-    padding-left: 1.5em;;
-    width: calc(50% - 1.5em);
+    padding: 0 1.5em;;
+    width: calc(50% - 3em);
 }
-
-
 /*
 #foods_drink >* {
     width: 50%;
@@ -227,3 +231,37 @@ div#mainContent>div:not(.headline)>*:not(.imageSelector){
     flex-direction: row-reverse;
 }
 */
+
+.img-fit {
+    height: 100%;
+    position: relative;
+}
+.img-fit>img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    /*
+    max-width:100%;
+    max-height:100%;
+    */
+    position: absolute;
+    inset: 50% 0 0 50%;
+    transform: translateY(-50%) translateX(-50%);
+}
+
+div.nowHere {
+    height: 3em;
+}
+
+div.nowHere>*{
+    display: block;
+    width: 100%;
+    height: 100%;
+    position: relative
+}
+div.nowHere>*>*{
+    position: absolute;
+    top: 50%;
+    left: 2em;
+    transform: translateY(-50%);
+}

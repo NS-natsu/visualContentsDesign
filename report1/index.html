@@ -10,11 +10,13 @@
     <body>
         <input type="checkbox" id="h-menu">
         <header>
-            <div><p>イタリアン　CIT　（シーアイティ）</p></div>
             <label for="h-menu" class="h-menu mask">
-                <div class="mask"></div>
             </label>
+            <div class="h-menu title uline">
+                メニュー
+            </div>
             <label for="h-menu" class="h-menu icon">
+            
                 <div class="icon">
                     <div class="bar"></div>
                     <div class="bar"></div>
@@ -27,20 +29,16 @@
         <nav class="side-menu">
             <label for="h-menu" class="h-menu mask"></label>
             <div class="content">
-                <div class="title uline">
-                    メニュー
-                </div>
-
                 <div class="uline nowHere">
                     <a href="">
-                        トップへ戻る
+                        <div>トップへ戻る</div>
                     </a>
                 </div>
                 <div class="uline nowHere">
-                    <label for="target 1">店舗紹介</label>
+                    <label for="target 1"><div>店舗紹介</div></label>
                 </div>
                 <div class="uline nowHere">
-                    <label for="target 2">当店のこだわり</label>
+                    <label for="target 2"><div>当店のこだわり</div></label>
                 </div>
 
                 <input type="checkbox" id="p-menu 1">
@@ -135,27 +133,35 @@
                     ●誕生日のサプライズも大歓迎！！ケーキ持ち込み可能です。
                     衛生対策は万全<br>
                 </div>
-                <div class="imageSelector" style="--amount: 3;">
+                <div class="imageSelector" style="--amount: 5;">
                     <input type="radio" id="imgSlc2 1" style="--itr:1;" name="slct2" checked>
                     <input type="radio" id="imgSlc2 2" style="--itr:2;" name="slct2">
                     <input type="radio" id="imgSlc2 3" style="--itr:3;" name="slct2">
+                    <input type="radio" id="imgSlc2 4" style="--itr:4;" name="slct2">
+                    <input type="radio" id="imgSlc2 5" style="--itr:5;" name="slct2">
 
                     <div class="leftCont">
-                        <label for="imgSlc2 3"></label>
+                        <label for="imgSlc2 5"></label>
                         <label for="imgSlc2 1"></label>
                         <label for="imgSlc2 2"></label>
+                        <label for="imgSlc2 3"></label>
+                        <label for="imgSlc2 4"></label>
                     </div>
                     
                     <div class="rightCont">
                         <label for="imgSlc2 2"></label>
                         <label for="imgSlc2 3"></label>
+                        <label for="imgSlc2 4"></label>
+                        <label for="imgSlc2 5"></label>
                         <label for="imgSlc2 1"></label>
                     </div>
 
                     <div class="img">
-                        <img src="./image/外観.jpg">
-                        <img src="./image/内装１.jpg">
-                        <img src="./image/内装２.jpg">
+                        <img src="./image/ガーリックトーストとワイン.jpg">
+                        <img src="./image/ワインと人気メニュー.jpg">
+                        <img src="./image/絶品アヒージョ人気メニュ０.jpg">
+                        <img src="./image/国産牛ステーキ.jpg">
+                        <img src="./image/こだわり５チーズ料理.jpg">
                     </div>
                 </div>
             </div>
@@ -169,28 +175,8 @@
                     ●スタンダードコース　3980円
                     ●プレミアムコース　5980円
                 </div>
-                <div id="house" class="imageSelector" style="--amount: 3;">
-                    <input type="radio" id="imgSlc3 1" style="--itr:1;" name="slct3" checked>
-                    <input type="radio" id="imgSlc3 2" style="--itr:2;" name="slct3">
-                    <input type="radio" id="imgSlc3 3" style="--itr:3;" name="slct3">
-
-                    <div class="leftCont">
-                        <label for="imgSlc3 3"></label>
-                        <label for="imgSlc3 1"></label>
-                        <label for="imgSlc3 2"></label>
-                    </div>
-                    
-                    <div class="rightCont">
-                        <label for="imgSlc3 2"></label>
-                        <label for="imgSlc3 3"></label>
-                        <label for="imgSlc3 1"></label>
-                    </div>
-
-                    <div class="img">
-                        <img src="./image/外観.jpg">
-                        <img src="./image/内装１.jpg">
-                        <img src="./image/内装２.jpg">
-                    </div>
+                <div class="img-fit">
+                    <img src="./image/こだわり３コース料理.jpg">
                 </div>
             </div>
 
@@ -223,9 +209,9 @@
                     </div>
 
                     <div class="img">
-                        <img src="./image/外観.jpg">
-                        <img src="./image/内装１.jpg">
-                        <img src="./image/内装２.jpg">
+                        <img src="./image/こだわり１ (2).jpg">
+                        <img src="./image/こだわり１.jpg">
+                        <img src="./image/こだわり１絶品パスタ.jpg">
                     </div>
                 </div>
             </div>
@@ -255,9 +241,9 @@
                     </div>
 
                     <div class="img">
-                        <img src="./image/外観.jpg">
-                        <img src="./image/内装１.jpg">
-                        <img src="./image/内装２.jpg">
+                        <img src="./image/こだわり２キャンペーン.jpg" style="object-fit: contain !important;">
+                        <img src="./image/こだわり２.jpg">
+                        <img src="./image/こだわり２または４.jpg">
                     </div>
                 </div>
             </div>
@@ -270,28 +256,8 @@
                     
                     お得なコースメニューは2980円から3種類ございます。飲み放題付きコースも人気です。女子会、お仲間とのご宴会におすすめです。
                 </div>
-                <div id="house" class="imageSelector" style="--amount: 3;">
-                    <input type="radio" id="imgSlc6 1" style="--itr:1;" name="slct6" checked>
-                    <input type="radio" id="imgSlc6 2" style="--itr:2;" name="slct6">
-                    <input type="radio" id="imgSlc6 3" style="--itr:3;" name="slct6">
-
-                    <div class="leftCont">
-                        <label for="imgSlc6 3"></label>
-                        <label for="imgSlc6 1"></label>
-                        <label for="imgSlc6 2"></label>
-                    </div>
-                    
-                    <div class="rightCont">
-                        <label for="imgSlc6 2"></label>
-                        <label for="imgSlc6 3"></label>
-                        <label for="imgSlc6 1"></label>
-                    </div>
-
-                    <div class="img">
-                        <img src="./image/外観.jpg">
-                        <img src="./image/内装１.jpg">
-                        <img src="./image/内装２.jpg">
-                    </div>
+                <div class="img-fit">
+                    <img src="./image/こだわり３コース料理.jpg">
                 </div>
             </div>
 
@@ -322,9 +288,9 @@
                     </div>
 
                     <div class="img">
-                        <img src="./image/外観.jpg">
-                        <img src="./image/内装１.jpg">
-                        <img src="./image/内装２.jpg">
+                        <img src="./image/こだわり２または４.jpg">
+                        <img src="./image/ワイン２.jpg">
+                        <img src="./image/わいん３.jpg">
                     </div>
                 </div>
             </div>
@@ -355,15 +321,16 @@
                     </div>
 
                     <div class="img">
-                        <img src="./image/外観.jpg">
-                        <img src="./image/内装１.jpg">
-                        <img src="./image/内装２.jpg">
+                        <img src="./image/こだわり５.jpg" style="object-fit: contain !important;">
+                        <img src="./image/こだわり５ (2).jpg">
+                        <img src="./image/こだわり５チーズ料理.jpg">
                     </div>
                 </div>
             </div>
         </div>
 
         <footer>
+            <hr>
             <div id="addr"><div id="post">〒999-999</div><div id="location">奈良氏之市都田沼１２３</div></div>
             <div id="tel">電話０００－１２３４－５６７８</div>
         </footer>

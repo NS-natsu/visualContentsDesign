@@ -33,7 +33,8 @@ input[type="checkbox"][id*="p-menu"]
 /*pull-down menu title*/
 input[type="checkbox"][id*="p-menu"]
     +.p-menu.list>label.p-menu>*:nth-child(1){
-    width: calc(100% - 36px);
+    width: calc(100% - 36px - 1em);
+    left: 1em;
 }
 
 input[type="checkbox"][id*="p-menu"]
