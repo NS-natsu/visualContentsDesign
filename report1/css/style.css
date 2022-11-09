@@ -62,14 +62,14 @@ footer {
     background-color: rgba(255, 255, 255, .4);
 }
 
-div#mainContent > div{
-    /*width: 100%;
+/*div#mainContent > div{
+    width: 100%;
     min-height: 200px;
     background-image: url("../image/外観.jpg");
     background-size: cover;
     background-repeat: no-repeat;
-    background-position: 0 -80px;*/
-}
+    background-position: 0 -80px;
+}*/
 
 .headline {
     --height: calc(var(--height, 3em) * .9);
@@ -79,6 +79,37 @@ div#mainContent > div{
     margin-bottom: calc(calc(var(--height) / 9) - 1px);
 }
 
-#house {
+ul, li {
+    list-style: none;
+    margin-left: 0;
+    padding-left: 0;
+}
+
+#howFeel {
+    width: 100%;
+    white-space: nowrap;
+    letter-spacing: -1em;
+}
+
+#howFeel>*{
     width: 50%;
+    display: inline-block;
+    white-space: normal;
+    letter-spacing: normal;
+    vertical-align: top;
+}
+
+#foods_drink {
+    width: 100%;
+    white-space: nowrap;
+    letter-spacing: -1em;
+    display: flex;
+    flex-direction: row-reverse;
+}
+
+#foods_drink >* {
+    width: 50%;
+    white-space: normal;
+    letter-spacing: normal;
+    vertical-align: top;
 }

@@ -1,6 +1,6 @@
 /*ラジオボタンの見た目*/
-.imageSelector>input[type="radio"][id*="imgSlc"]::before,
-.imageSelector>input[type="radio"][id*="imgSlc"]::after {
+.imageSelector>input[type="radio"]::before,
+.imageSelector>input[type="radio"]::after {
     content: "";
     height: 100%;
     aspect-ratio: 1 / 1;
@@ -12,13 +12,13 @@
     background-color: white;
 }
 
-.imageSelector>input[type="radio"][id*="imgSlc"]::after {
+.imageSelector>input[type="radio"]::after {
     opacity: 0;
     transition: opacity 0.48s;
     background-color: gray;
 }
 
-.imageSelector>input[type="radio"][id*="imgSlc"]:checked::after {
+.imageSelector>input[type="radio"]:checked::after {
     opacity: 1;
 }
 
@@ -35,7 +35,7 @@
     padding: 0;
 }
 
-.imageSelector>input[type="radio"][id*="imgSlc"] {
+.imageSelector>input[type="radio"] {
     top: 100%;
     transform: translateY(-100%);
     left: calc(calc(var(--itr) - 1) * calc(100% / var(--amount)));
@@ -78,19 +78,19 @@
     inset: 0 0 auto auto;
 }
 
-.imageSelector>input[type="radio"][id*="imgSlc"][id*="1"]:checked
+.imageSelector>input[type="radio"][id$=" 1"]:checked
     ~div:not(.img)>*:nth-child(1) {
     pointer-events: auto;
 }
-.imageSelector>input[type="radio"][id*="imgSlc"][id*="2"]:checked
+.imageSelector>input[type="radio"][id$=" 2"]:checked
     ~div:not(.img)>*:nth-child(2) {
     pointer-events: auto;
 }
-.imageSelector>input[type="radio"][id*="imgSlc"][id*="3"]:checked
+.imageSelector>input[type="radio"][id$=" 3"]:checked
     ~div:not(.img)>*:nth-child(3) {
     pointer-events: auto;
 }
-.imageSelector>input[type="radio"][id*="imgSlc"][id*="4"]:checked
+.imageSelector>input[type="radio"][id$=" 4"]:checked
     ~div:not(.img)>*:nth-child(4) {
     pointer-events: auto;
 }
@@ -118,19 +118,19 @@
 
 }
 
-.imageSelector>input[type="radio"][id*="imgSlc"][id*="1"]:checked
+.imageSelector>input[type="radio"][id$=" 1"]:checked
     ~div.img>*:nth-child(1) {
     opacity: 1;
 }
-.imageSelector>input[type="radio"][id*="imgSlc"][id*="2"]:checked
+.imageSelector>input[type="radio"][id$=" 2"]:checked
     ~div.img>*:nth-child(2) {
     opacity: 1;
 }
-.imageSelector>input[type="radio"][id*="imgSlc"][id*="3"]:checked
+.imageSelector>input[type="radio"][id$=" 3"]:checked
     ~div.img>*:nth-child(3) {
     opacity: 1;
 }
-.imageSelector>input[type="radio"][id*="imgSlc"][id*="4"]:checked
+.imageSelector>input[type="radio"][id$=" 4"]:checked
     ~div.img>*:nth-child(4) {
     opacity: 1;
 }
