@@ -168,12 +168,48 @@ div#mainContent>input[type="radio"][id*="target"][id$=" 2"]:checked
                 visibility 0s calc(var(--start) + var(--default-duration));
 }
 
+div#mainContent>div:not(.headline){
+    width: 100%;
+    white-space: nowrap;
+    letter-spacing: -1em;
+    display: flex;
+    align-items: flex-start;
+}
+
+div#mainContent>div:not(.headline)>*{
+    width: 50%;
+    white-space: normal;
+    letter-spacing: normal;
+    vertical-align: top;
+}
+
+div#mainContent>div.tgt1:nth-child(4n+7):not(.headline){
+    flex-direction: row-reverse;
+}
+
+div#mainContent>div.tgt2:nth-child(4n+14):not(.headline){
+    flex-direction: row-reverse;
+}
+
+div#mainContent>div:not(.headline)>*:not(.imageSelector){
+    padding-left: 1.5em;;
+    width: calc(50% - 1.5em);
+}
+
+
+/*
+#foods_drink >* {
+    width: 50%;
+    white-space: normal;
+    letter-spacing: normal;
+    vertical-align: top;
+}
+
 #howFeel {
     width: 100%;
     white-space: nowrap;
     letter-spacing: -1em;
 }
-
 #howFeel>*{
     width: 50%;
     display: inline-block;
@@ -190,10 +226,4 @@ div#mainContent>input[type="radio"][id*="target"][id$=" 2"]:checked
     align-items: flex-start;
     flex-direction: row-reverse;
 }
-
-#foods_drink >* {
-    width: 50%;
-    white-space: normal;
-    letter-spacing: normal;
-    vertical-align: top;
-}
+*/
