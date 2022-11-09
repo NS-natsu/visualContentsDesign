@@ -65,7 +65,8 @@
 
 .imageSelector>div.img {
     width: 100%;
-    position: initial;
+    position: relative;
+    z-index: 1;
 }
 
 .imageSelector>div.img::before{
