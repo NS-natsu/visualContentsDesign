@@ -1,3 +1,7 @@
+:root {
+    --default-duration: 0.24s;
+}
+
 /*ラジオボタンの見た目*/
 .imageSelector>input[type="radio"]::before,
 .imageSelector>input[type="radio"]::after {
@@ -10,11 +14,12 @@
     
     border-radius: 50%;
     background-color: white;
+    z-index: 2;
 }
 
 .imageSelector>input[type="radio"]::after {
     opacity: 0;
-    transition: opacity 0.48s;
+    transition: opacity calc(2*var(--default-duration));
     background-color: gray;
 }
 
@@ -27,6 +32,8 @@
     position: relative;
     background-color: black;
     min-width: 180px;
+    
+    aspect-ratio: 4 / 3;
 }
 
 .imageSelector>* {
@@ -36,14 +43,13 @@
 }
 
 .imageSelector>input[type="radio"] {
-    top: 100%;
+    top: calc(100% - 1px);
     transform: translateY(-100%);
     left: calc(calc(var(--itr) - 1) * calc(100% / var(--amount)));
     width: calc(100% / var(--amount));
     pointer-events: none;
     z-index: 3;
-
-    accent-color: gray;
+    align-content: center;
 }
 
 .imageSelector>div:not(.img) {
@@ -54,7 +60,7 @@
     opacity: .3;
     z-index: 2;
 
-    transition: opacity 0.24s;
+    transition: opacity var(--default-duration);
 
     background-image: url("../image/arrow.jpg");
     background-repeat: no-repeat;
@@ -100,16 +106,9 @@
     position: initial;
 }
 
-.imageSelector>div.img::before{
-    content: "";
-    display: inline-block;
-    /*画像用の要素はアスペクト比3:4にする*/
-    padding-top: 75%;
-}
-
 .imageSelector>div.img>* {
     opacity: 0;
-    transition: opacity 0.24s;
+    transition: opacity var(--default-duration);
     position: absolute;
     max-width:100%;
     max-height:100%;

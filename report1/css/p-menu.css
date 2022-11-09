@@ -1,3 +1,7 @@
+:root {
+    --default-duration: 0.24s;
+}
+
 input[type="checkbox"][id*="p-menu"] {
     display: none;
 }
@@ -97,7 +101,7 @@ ul.p-menu > li:hover {
 
 input[type="checkbox"][id*="p-menu"]
     +.p-menu.list+.p-menu.body>ul.p-menu{
-    transition: height 0.24s;
+    transition: height var(--default-duration);
     /*display: none !important;*/
     height: 0;
     overflow-y: hidden;

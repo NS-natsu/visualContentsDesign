@@ -1,9 +1,14 @@
+:root {
+    --default-duration: 0.24s;
+}
+
 body {
     position: relative;
     margin: 0;
     padding: 0;
-    height: 100vh;
+    height: 100%;
 }
+
 
 div#mainContent, footer {
     margin-left: 8px;
@@ -14,10 +19,18 @@ div#mainContent, footer {
 
 header {
     width: 100%;
-    height: 10%;
+    height: 10vh;
     display:inline-block;
     position: fixed;
     z-index: 50;
+}
+
+header+div#header_offset {
+    display: block;
+    position: static;
+    height: 10vh;
+    width: 100%;
+    opacity: 0;
 }
 
 header > *:nth-child(1){
@@ -70,19 +83,89 @@ footer {
     background-repeat: no-repeat;
     background-position: 0 -80px;
 }*/
-
-.headline {
-    --height: calc(var(--height, 3em) * .9);
-    height: var(--height);
-    width: 60%;
-    border-bottom: 1px solid gray;
-    margin-bottom: calc(calc(var(--height) / 9) - 1px);
-}
-
 ul, li {
     list-style: none;
     margin-left: 0;
     padding-left: 0;
+}
+
+div#mainContent>div {
+    margin-left: 1.5em;
+}
+
+.headline {
+    --height: calc(var(--height, 3em) * .9);
+    
+    width: 60%;
+    height: var(--height);
+    border-bottom: 1px solid gray;
+    margin-bottom: calc(calc(var(--height) / 9) - 1px);
+}
+
+div#mainContent>input[type="radio"][id^="target "]{
+    opacity: 0;
+    z-index: -1;
+    display: none;
+    visibility: hidden;
+    position: absolute;
+    pointer-events: none;
+}
+
+div#mainContent>div.tgt1.headline,
+div#mainContent>div.tgt2.headline{
+    --start: 0s;
+    width: calc(60% - 1.5em);
+    height: 0;
+    opacity: 0;
+    overflow-y: hidden;
+
+    transition: opacity var(--default-duration) 0s,
+                visibility 0s var(--default-duration),
+                height var(--default-duration) var(--default-duration);
+}
+
+div#mainContent>input[type="radio"][id*="target"][id$=" 1"]:checked
+    ~div.tgt1.headline,
+div#mainContent>input[type="radio"][id*="target"][id$=" 2"]:checked
+    ~div.tgt2.headline{
+    height: var(--height);
+    visibility: visible;
+    opacity: 1;
+
+    transition: height var(--default-duration) calc(var(--start) + 0s),
+                opacity var(--default-duration) calc(var(--start) + var(--default-duration)),
+                visibility 0s calc(var(--start) + var(--default-duration));
+}
+
+
+div#mainContent>div.tgt1:not(.headline),
+div#mainContent>div.tgt2:not(.headline){
+    --start: calc(2 * var(--default-duration));
+    width: 0;
+    overflow-y: hidden;
+    visibility: hidden;
+    opacity: 0;
+
+    aspect-ratio: 8 / 3;
+
+    transition: opacity var(--default-duration) 0s,
+                visibility 0s var(--default-duration),
+                width var(--default-duration) var(--default-duration);
+}
+
+
+div#mainContent>input[type="radio"][id*="target"][id$=" 1"]:checked
+    ~div.tgt1:not(.headline),
+div#mainContent>input[type="radio"][id*="target"][id$=" 2"]:checked
+    ~div.tgt2:not(.headline){
+    width: calc(100% - 1.5em);
+    height: auto;
+    visibility: visible;
+    opacity: 1;
+
+    transition: width var(--default-duration) calc(var(--start) + 0s),
+                opacity var(--default-duration) calc(var(--start) + var(--default-duration)),
+                visibility 0s calc(var(--start) + var(--default-duration));
 }
 
 #howFeel {
@@ -104,6 +187,7 @@ ul, li {
     white-space: nowrap;
     letter-spacing: -1em;
     display: flex;
+    align-items: flex-start;
     flex-direction: row-reverse;
 }
 
