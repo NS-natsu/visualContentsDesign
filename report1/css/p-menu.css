@@ -82,14 +82,10 @@ div.p-menu.body{
 
 div.p-menu.body>ul.p-menu {
     position: relative;
-    margin: 0;
-    padding: 0;
 }
 div.p-menu.body>ul.p-menu>li{
     width: calc(100% - 1em);
     height: 1.5em;
-    margin: 0 0;
-    padding: 0 0;
     padding-top: calc(calc(var(--list-content-height) / 2) - .75em);
     padding-bottom: calc(calc(var(--list-content-height) / 2) - .75em);
     padding-left: 1em;

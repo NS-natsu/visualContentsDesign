@@ -42,13 +42,14 @@ div#mainContent>div.tgt2.headline{
     width: calc(60% - 1.5em);
     height: 0;
     opacity: 0;
-    margin-top: 0;
+    padding-top: 0;
     margin-bottom: 0;
     overflow-y: hidden;
 
     transition: opacity var(--default-duration) 0s,
                 visibility 0s var(--default-duration),
                 margin var(--default-duration) var(--default-duration),
+                padding var(--default-duration) var(--default-duration),
                 height var(--default-duration) var(--default-duration);
 }
 
@@ -61,11 +62,12 @@ div#mainContent>input[type="radio"][id*="target"][id$=" 2"]:checked
     opacity: 1;
 
     
-    margin-top: 1.5em;
+    padding-top: 1.5em;
     margin-bottom: 1.5em;
 
     transition: height var(--default-duration) calc(var(--start) + 0s),
                 margin var(--default-duration) calc(var(--start) + 0s),
+                padding var(--default-duration) calc(var(--start) + 0s),
                 opacity var(--default-duration) calc(var(--start) + var(--default-duration)),
                 visibility 0s calc(var(--start) + var(--default-duration));
 }

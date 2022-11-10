@@ -1,18 +1,27 @@
 :root {
     --default-duration: 0.24s;
-    --header-height: 6%;
+    --header-height: 6vh;
+}
+
+* {
+    margin: 0;
+    padding: 0;
 }
 
 body {
-    position: relative;
-    margin: 0;
-    padding: 0;
     width: 100%;
     height: 100%;
 
     background-color: bisque;
 }
 
+div#mainContent {
+    background-color: red;
+}
+
+footer {
+    background-color: pink;
+}
 
 div#mainContent, footer {
     margin: 0 auto;
@@ -109,7 +118,8 @@ div#mainContent>div {
     width: 60%;
     height: var(--height);
     border-bottom: 1px solid gray;
-    margin: 1.5em 0;
+    padding-top: 1.5em;
+    margin-bottom: 1.5em;
 }
 
 .img-fit {
