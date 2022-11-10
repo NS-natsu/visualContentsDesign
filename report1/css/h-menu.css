@@ -1,6 +1,6 @@
 :root {
     --default-duration: 0.24s;
-    --h-menu-color: rgba(110, 219, 249, 0.8)
+    --h-menu-color: rgba(110, 219, 249, 1)
 }
 
 input[type="checkbox"]#h-menu {

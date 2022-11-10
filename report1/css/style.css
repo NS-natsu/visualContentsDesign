@@ -12,15 +12,15 @@ body {
     width: 100%;
     height: 100%;
 
-    background-color: bisque;
+    background-image: url("../image/stone.jpg");
 }
 
 div#mainContent {
-    background-color: red;
+    background-color: rgba(255, 228,196, .95);
 }
 
 footer {
-    background-color: pink;
+    background-color: rgba(205, 178,146, 1);
 }
 
 div#mainContent, footer {
@@ -104,12 +104,26 @@ footer {
 }*/
 ul, li {
     list-style: none;
-    margin-left: 0;
-    padding-left: 0;
+    margin: .5em 0;
+}
+
+li {
+    padding-left: 1.5em;
+}
+
+.enable-style>li{
+    list-style: inside;
+    margin: 0;
+}
+
+.wide-margin>ul,
+.wide-margin>li {
+    margin: 1.5em 0;
 }
 
 div#mainContent>div {
     margin-left: 1.5em;
+    margin-right: 1.5em;
 }
 
 .headline {
@@ -128,7 +142,8 @@ div#mainContent>div {
     aspect-ratio: 4 / 3;
 }
 
-.img-fit>img {
+.img-fit>img,
+.img-fit>video {
     width: 100%;
     height: 100%;
     object-fit: cover;

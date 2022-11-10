@@ -8,6 +8,7 @@ div#mainContent>div.content>div.headline {
     transition: margin var(--default-duration) var(--default-duration);
 }
 
+div#mainContent>div.content.usually>div.headline,
 div#mainContent>div.content:target>div.headline {    
     margin-top: 1.5em;
     margin-bottom: 1.5em;
@@ -26,7 +27,7 @@ div#mainContent>div.content>div.items:not(.headline){
                 width var(--default-duration) var(--default-duration);
 }
 
-
+div#mainContent>div.content.usually>div:not(.headline),
 div#mainContent>div.content:target>div:not(.headline) {
     margin: 0 auto 2em auto;
     width: calc(50% - 1.5em);
@@ -47,6 +48,7 @@ div#mainContent>div.content>div.correct-pos {
     height: auto;
 }
 
+div#mainContent>div.content.usually>div:nth-child(even).correct-pos,
 div#mainContent>div.content:target>div:nth-child(even).correct-pos {
     width: 50%;
 }
@@ -56,7 +58,9 @@ div#mainContent>div.content>div:not(.headline)>div{
     overflow-y: hidden;
 }
 
-div#mainContent>div.content:target>div:not(.headline)>div{
+
+div#mainContent>div.content.usually>div:not(.headline)>div,
+div#mainContent>div.content:target>div:not(.headline)>div {
     height: auto;
     overflow-y: initial;
 }

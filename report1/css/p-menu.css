@@ -2,6 +2,11 @@
     --default-duration: 0.24s;
 }
 
+ul.p-menu>li{
+    margin: 0;
+    padding: 0;
+}
+
 input[type="checkbox"][id*="p-menu"] {
     display: none;
 }
@@ -34,7 +39,7 @@ input[type="checkbox"][id*="p-menu"]
 input[type="checkbox"][id*="p-menu"]
     +.p-menu.list>label.p-menu>*:nth-child(1){
     width: calc(100% - 36px - 1em);
-    left: 1em;
+    padding-left: 1em;
 }
 
 input[type="checkbox"][id*="p-menu"]

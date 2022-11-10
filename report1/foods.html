@@ -37,6 +37,13 @@
                     </a>
                 </div>
                 <div class="uline nowHere">
+                    <a href="#pickup">
+                        <div>
+                            ピックアップ
+                        </div>
+                    </a>
+                </div>
+                <div class="uline nowHere">
                     <a href="#meet">
                         <div>
                             肉料理
@@ -47,6 +54,13 @@
                     <a href="#sarad">
                         <div>
                             サラダ
+                        </div>
+                    </a>
+                </div>
+                <div class="uline nowHere">
+                    <a href="#other">
+                        <div>
+                            他
                         </div>
                     </a>
                 </div>
@@ -71,10 +85,41 @@
         </nav>
 
         <div id="mainContent">
-            <span><div class="headline" style="--height: 2em;">店舗紹介</div></span>
-            <div id="" class="content"><!--パスタは1つだけなので常時表示する-->
-
+            <span><div class="headline" style="--height: 2em;">店舗紹介</div></span>            
+            <div id="pickup" class="content">
+                <div class="headline" style="--height: 2em;">
+                    <a href="#meet">
+                        <div>
+                            ピックアップ
+                        </div>
+                    </a>
+                </div>
+                <div class="items">
+                    <div>
+                        パスタ
+                    </div>
+                    <div class="img-fit">
+                        <video src="./video/パスタ.mp4" loop autoplay muted preload>
+                    </div>
+                </div>
+                <div class="items">
+                    <div style="height: 1.5em;">
+                    </div>
+                    <div class="img-fit">
+                        <img src="./image/こだわり１絶品パスタ.jpg">
+                    </div>
+                </div>
+                <div class="items">
+                    <div>
+                        アヒージョ
+                    </div>
+                    <div class="img-fit">
+                        <img src="./image/絶品アヒージョ人気メニュ０.jpg">
+                    </div>
+                </div>
+                <div class="correct-pos"></div>
             </div>
+
             <div id="meet" class="content">
                 <div class="headline" style="--height: 2em;">
                     <a href="#meet">
@@ -173,6 +218,57 @@
                     </div>
                     <div class="img-fit">
                         <img src="./image/トマトとモッツァレラチーズ.jpg">
+                    </div>
+                </div>
+                <div class="correct-pos"></div>
+            </div>
+            
+            <div id="other" class="content">
+                <div class="headline" style="--height: 2em;">
+                    <a href="#other">
+                        <div>
+                            他
+                        </div>
+                    </a>
+                </div>
+                <div class="items">
+                    <div>
+                        パン
+                    </div>
+                    <div class="imageSelector" style="--amount: 2;">
+                        <input type="radio" id="imgSlc2 1" style="--itr:1;" name="slct2" checked>
+                        <input type="radio" id="imgSlc2 2" style="--itr:2;" name="slct2">
+
+                        <div class="leftCont">
+                            <label for="imgSlc2 2"></label>
+                            <label for="imgSlc2 1"></label>
+                        </div>
+                        
+                        <div class="rightCont">
+                            <label for="imgSlc2 2"></label>
+                            <label for="imgSlc2 1"></label>
+                        </div>
+
+                        <div class="img">
+                            <img src="./image/お通しのパンとオリーブオイル.jpg">
+                            <img src="./image/ガーリックトーストとワイン.jpg" style="object-fit: contain;">
+                        </div>
+                    </div>
+                </div>
+                <div class="items">
+                    <div>
+                        アヒージョ
+                    </div>
+                    <div class="img-fit">
+                        <img src="./image/アヒージョ.jpg">
+                    </div>
+                </div>
+                <div class="items">
+                    <div>
+                        チーズ料理
+                    </div>
+                    <div class="img-fit">
+                        <img src="./image/こだわり５チーズ料理.jpg">
                     </div>
                 </div>
                 <div class="correct-pos"></div>

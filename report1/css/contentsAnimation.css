@@ -92,7 +92,7 @@ div#mainContent>input[type="radio"][id*="target"][id$=" 1"]:checked
     ~div.tgt1:not(.headline),
 div#mainContent>input[type="radio"][id*="target"][id$=" 2"]:checked
     ~div.tgt2:not(.headline){
-    width: calc(100% - 1.5em);
+    width: calc(100% - 3em);
     height: auto;
     visibility: visible;
     opacity: 1;
