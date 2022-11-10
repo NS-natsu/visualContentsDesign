@@ -15,7 +15,7 @@ body {
 div#mainContent, footer {
     margin-left: 8px;
     margin-right: 8px;
-    display: inline-block;
+    display: block;
     position: relative;
 }
 
@@ -116,63 +116,6 @@ div#mainContent>input[type="radio"][id^="target "]{
     pointer-events: none;
 }
 
-div#mainContent>div.tgt1.headline,
-div#mainContent>div.tgt2.headline{
-    --start: 0s;
-    width: calc(60% - 1.5em);
-    height: 0;
-    opacity: 0;
-    overflow-y: hidden;
-
-    transition: opacity var(--default-duration) 0s,
-                visibility 0s var(--default-duration),
-                height var(--default-duration) var(--default-duration);
-}
-
-div#mainContent>input[type="radio"][id*="target"][id$=" 1"]:checked
-    ~div.tgt1.headline,
-div#mainContent>input[type="radio"][id*="target"][id$=" 2"]:checked
-    ~div.tgt2.headline{
-    height: var(--height);
-    visibility: visible;
-    opacity: 1;
-
-    transition: height var(--default-duration) calc(var(--start) + 0s),
-                opacity var(--default-duration) calc(var(--start) + var(--default-duration)),
-                visibility 0s calc(var(--start) + var(--default-duration));
-}
-
-
-div#mainContent>div.tgt1:not(.headline),
-div#mainContent>div.tgt2:not(.headline){
-    --start: calc(2 * var(--default-duration));
-    width: 0;
-    overflow-y: hidden;
-    visibility: hidden;
-    opacity: 0;
-
-    aspect-ratio: 8 / 3;
-
-    transition: opacity var(--default-duration) 0s,
-                visibility 0s var(--default-duration),
-                width var(--default-duration) var(--default-duration);
-}
-
-
-div#mainContent>input[type="radio"][id*="target"][id$=" 1"]:checked
-    ~div.tgt1:not(.headline),
-div#mainContent>input[type="radio"][id*="target"][id$=" 2"]:checked
-    ~div.tgt2:not(.headline){
-    width: calc(100% - 1.5em);
-    height: auto;
-    visibility: visible;
-    opacity: 1;
-
-    transition: width var(--default-duration) calc(var(--start) + 0s),
-                opacity var(--default-duration) calc(var(--start) + var(--default-duration)),
-                visibility 0s calc(var(--start) + var(--default-duration));
-}
-
 div#mainContent>div:not(.headline){
     width: 100%;
     white-space: nowrap;
@@ -201,36 +144,6 @@ div#mainContent>div:not(.headline)>*:not(.imageSelector){
     padding: 0 1.5em;;
     width: calc(50% - 3em);
 }
-/*
-#foods_drink >* {
-    width: 50%;
-    white-space: normal;
-    letter-spacing: normal;
-    vertical-align: top;
-}
-
-#howFeel {
-    width: 100%;
-    white-space: nowrap;
-    letter-spacing: -1em;
-}
-#howFeel>*{
-    width: 50%;
-    display: inline-block;
-    white-space: normal;
-    letter-spacing: normal;
-    vertical-align: top;
-}
-
-#foods_drink {
-    width: 100%;
-    white-space: nowrap;
-    letter-spacing: -1em;
-    display: flex;
-    align-items: flex-start;
-    flex-direction: row-reverse;
-}
-*/
 
 .img-fit {
     height: 100%;

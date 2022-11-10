@@ -1,0 +1,100 @@
+div#mainContent>div>div.headline{
+    --start: 0s;
+    width: calc(60% - 1.5em);
+    height: 0;
+    opacity: 0;
+    margin: 0;
+    overflow-y: hidden;
+
+    transition: opacity var(--default-duration) 0s,
+                visibility 0s var(--default-duration),
+                height var(--default-duration) var(--default-duration)
+                margin var(--default-duration) var(--default-duration);
+}
+
+/*target*/
+div#mainContent>div>div.headline{
+    height: var(--height);
+    visibility: visible;
+    opacity: 1;
+
+    transition: height var(--default-duration) calc(var(--start) + 0s),
+            opacity var(--default-duration) calc(var(--start) + var(--default-duration)),
+            visibility 0s calc(var(--start) + var(--default-duration));
+}
+
+
+div#mainContent>div>div:not(.headline) {
+    --start: calc(2 * var(--default-duration));
+    width: 0;
+    overflow-y: hidden;
+    visibility: hidden;
+    opacity: 0;
+
+    aspect-ratio: 8 / 3;
+
+    transition: opacity var(--default-duration) 0s,
+                visibility 0s var(--default-duration),
+                width var(--default-duration) var(--default-duration);
+}
+/*
+div#mainContent>div>div:not(.headline):target {
+    width: calc(100% - 1.5em);
+    height: auto;
+    visibility: visible;
+    opacity: 1;
+
+    transition: width var(--default-duration) calc(var(--start) + 0s),
+                opacity var(--default-duration) calc(var(--start) + var(--default-duration)),
+                visibility 0s calc(var(--start) + var(--default-duration));
+}*/
+
+/*div#mainContent>div.headline{
+    --start: 0s;
+    width: calc(60% - 1.5em);
+    height: 0;
+    opacity: 0;
+    margin: 0;
+    overflow-y: hidden;
+
+    transition: opacity var(--default-duration) 0s,
+                visibility 0s var(--default-duration),
+                height var(--default-duration) var(--default-duration)
+                margin var(--default-duration) var(--default-duration);
+}
+
+div.headline:target{
+    height: var(--height);
+    visibility: visible;
+    opacity: 1;
+
+    transition: height var(--default-duration) calc(var(--start) + 0s),
+            opacity var(--default-duration) calc(var(--start) + var(--default-duration)),
+            visibility 0s calc(var(--start) + var(--default-duration));
+}
+
+div#mainContent>div:not(.headline) {
+    --start: calc(2 * var(--default-duration));
+    width: 0;
+    overflow-y: hidden;
+    visibility: hidden;
+    opacity: 0;
+
+    aspect-ratio: 8 / 3;
+
+    transition: opacity var(--default-duration) 0s,
+                visibility 0s var(--default-duration),
+                width var(--default-duration) var(--default-duration);
+}
+
+
+div:not(.headline):target {
+    width: calc(100% - 1.5em);
+    height: auto;
+    visibility: visible;
+    opacity: 1;
+
+    transition: width var(--default-duration) calc(var(--start) + 0s),
+                opacity var(--default-duration) calc(var(--start) + var(--default-duration)),
+                visibility 0s calc(var(--start) + var(--default-duration));
+}*/

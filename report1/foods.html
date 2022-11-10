@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8" />
+        <link rel="stylesheet" type="text/css" href="css/style.css"/>
+        <link rel="stylesheet" type="text/css" href="css/contentsAnimation2.css"/>
+
+        <link rel="stylesheet" type="text/css" href="css/h-menu.css"/>
+        <link rel="stylesheet" type="text/css" href="css/p-menu.css"/>
+        <link rel="stylesheet" type="text/css" href="css/imgSlc.css"/>
+    </head>
+    <body>
+        <input type="checkbox" id="h-menu">
+        <header>
+            <label for="h-menu" class="h-menu mask">
+            </label>
+            <div class="h-menu title uline">
+                メニュー
+            </div>
+            <label for="h-menu" class="h-menu icon">
+            
+                <div class="icon">
+                    <div class="bar"></div>
+                    <div class="bar"></div>
+                    <div class="bar"></div>
+                </div>
+            </label>
+        </header>
+        <div id="header_offset"></div>
+        
+        <nav class="side-menu">
+            <label for="h-menu" class="h-menu mask"></label>
+            <div class="content">
+                <div class="uline nowHere">
+                    <a href="">
+                        <div>トップへ戻る</div>
+                    </a>
+                </div>
+                <div class="uline nowHere">
+                    <label for="target 1"><div>店舗紹介</div></label>
+                </div>
+                <div class="uline nowHere">
+                    <label for="target 2"><div>当店のこだわり</div></label>
+                </div>
+
+                <input type="checkbox" id="p-menu 1">
+                <div class="p-menu list">
+                    <label for="p-menu 1" class="p-menu ulines">
+                        <div>料理</div>
+                        <div class="icon">
+                            <div class="bar"></div>
+                            <div class="bar"></div>
+                        </div>
+                    </label>
+                </div>
+                <div class="p-menu body" style="--size-of-contents: 1;">
+                    <ul class="p-menu">
+                        <li>肉</li>
+                    </ul>
+                </div>
+
+                <input type="checkbox" id="p-menu 2">
+                <div class="p-menu list">
+                    <label for="p-menu 2" class="p-menu ulines">
+                        <div>ドリンク</div>
+                        <div class="icon">
+                            <div class="bar"></div>
+                            <div class="bar"></div>
+                        </div>
+                    </label>
+                </div>
+                <div class="p-menu body" style="--size-of-contents: 2;">
+                    <ul class="p-menu">
+                        <li>肉</li>
+                        <li>野菜</li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+
+        <div id="mainContent">
+            <a href="#meet"><div class="headline" style="--height: 2em;">店舗紹介</div></label>
+
+            <div id="meet">
+                <div class="headline" style="--height: 2em;">店舗の特徴</div>
+                <div>
+                    <div class="imageSelector" style="--amount: 3;">
+                        <input type="radio" id="imgSlc 1" style="--itr:1;" name="slct" checked>
+                        <input type="radio" id="imgSlc 2" style="--itr:2;" name="slct">
+                        <input type="radio" id="imgSlc 3" style="--itr:3;" name="slct">
+
+                        <div class="leftCont">
+                            <label for="imgSlc 3"></label>
+                            <label for="imgSlc 1"></label>
+                            <label for="imgSlc 2"></label>
+                        </div>
+                        
+                        <div class="rightCont">
+                            <label for="imgSlc 2"></label>
+                            <label for="imgSlc 3"></label>
+                            <label for="imgSlc 1"></label>
+                        </div>
+
+                        <div class="img">
+                            <img src="./image/外観.jpg">
+                            <img src="./image/内装１.jpg">
+                            <img src="./image/内装２.jpg">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <footer>
+            <hr>
+            <div id="addr"><div id="post">〒999-999</div><div id="location">奈良氏之市都田沼１２３</div></div>
+            <div id="tel">電話０００－１２３４－５６７８</div>
+        </footer>
+    </body>
+</html>
