@@ -112,48 +112,12 @@ div#mainContent>div {
     margin: 1.5em 0;
 }
 
-div#mainContent>input[type="radio"][id^="target "]{
-    opacity: 0;
-    z-index: -1;
-    display: none;
-    visibility: hidden;
-    position: absolute;
-    pointer-events: none;
-}
-
-div#mainContent>div:not(.headline){
-    width: 100%;
-    white-space: nowrap;
-    letter-spacing: -1em;
-    display: flex;
-    align-items: flex-start;
-    justify-content: stretch;
-}
-
-div#mainContent>div:not(.headline)>*{
-    width: 50%;
-    white-space: normal;
-    letter-spacing: normal;
-    vertical-align: top;
-}
-
-div#mainContent>div.tgt1:nth-child(4n+7):not(.headline){
-    flex-direction: row-reverse;
-}
-
-div#mainContent>div.tgt2:nth-child(4n+14):not(.headline){
-    flex-direction: row-reverse;
-}
-
-div#mainContent>div:not(.headline)>*:not(.imageSelector){
-    padding: 0 1.5em;;
-    width: calc(50% - 3em);
-}
-
 .img-fit {
     height: 100%;
     position: relative;
+    aspect-ratio: 4 / 3;
 }
+
 .img-fit>img {
     width: 100%;
     height: 100%;
@@ -182,4 +146,13 @@ div.nowHere>*>*{
     top: 50%;
     left: 2em;
     transform: translateY(-50%);
+}
+
+label {
+    cursor: pointer;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
 }

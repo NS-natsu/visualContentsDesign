@@ -25,7 +25,7 @@ input[type="checkbox"][id*="p-menu"]
 input[type="checkbox"][id*="p-menu"]
     +.p-menu.list>label.p-menu>*{
     position: relative;
-    padding-top:1em;
+    padding-top:1.5em;
     height:3em;
     float: left;
 }

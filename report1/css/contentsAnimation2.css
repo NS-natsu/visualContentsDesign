@@ -1,86 +1,25 @@
-div#mainContent>div>div.headline{
-    --start: 0s;
-    width: calc(60% - 1.5em);
-    height: 0;
-    opacity: 0;
-    margin: 0;
-    overflow-y: hidden;
-
-    transition: opacity var(--default-duration) 0s,
-                visibility 0s var(--default-duration),
-                height var(--default-duration) var(--default-duration)
-                margin var(--default-duration) var(--default-duration);
-}
-
-/*target*/
-div#mainContent>div>div.headline{
+div#mainContent>div.content>div.headline {
     height: var(--height);
-    visibility: visible;
-    opacity: 1;
+    width: 60%;
+    margin-top: 0;
+    margin-bottom: 0;
+    overflow-y: hidden;
 
-    transition: height var(--default-duration) calc(var(--start) + 0s),
-            opacity var(--default-duration) calc(var(--start) + var(--default-duration)),
-            visibility 0s calc(var(--start) + var(--default-duration));
+    transition: margin var(--default-duration) var(--default-duration);
 }
 
+div#mainContent>div.content:target>div.headline {    
+    margin-top: 1.5em;
+    margin-bottom: 1.5em;
 
-div#mainContent>div>div:not(.headline) {
-    --start: calc(2 * var(--default-duration));
+    transition: margin var(--default-duration) 0s;
+}
+
+div#mainContent>div.content>div.items:not(.headline){
+    --start: var(--default-duration);
     width: 0;
-    overflow-y: hidden;
     visibility: hidden;
     opacity: 0;
-
-    aspect-ratio: 8 / 3;
-
-    transition: opacity var(--default-duration) 0s,
-                visibility 0s var(--default-duration),
-                width var(--default-duration) var(--default-duration);
-}
-/*
-div#mainContent>div>div:not(.headline):target {
-    width: calc(100% - 1.5em);
-    height: auto;
-    visibility: visible;
-    opacity: 1;
-
-    transition: width var(--default-duration) calc(var(--start) + 0s),
-                opacity var(--default-duration) calc(var(--start) + var(--default-duration)),
-                visibility 0s calc(var(--start) + var(--default-duration));
-}*/
-
-/*div#mainContent>div.headline{
-    --start: 0s;
-    width: calc(60% - 1.5em);
-    height: 0;
-    opacity: 0;
-    margin: 0;
-    overflow-y: hidden;
-
-    transition: opacity var(--default-duration) 0s,
-                visibility 0s var(--default-duration),
-                height var(--default-duration) var(--default-duration)
-                margin var(--default-duration) var(--default-duration);
-}
-
-div.headline:target{
-    height: var(--height);
-    visibility: visible;
-    opacity: 1;
-
-    transition: height var(--default-duration) calc(var(--start) + 0s),
-            opacity var(--default-duration) calc(var(--start) + var(--default-duration)),
-            visibility 0s calc(var(--start) + var(--default-duration));
-}
-
-div#mainContent>div:not(.headline) {
-    --start: calc(2 * var(--default-duration));
-    width: 0;
-    overflow-y: hidden;
-    visibility: hidden;
-    opacity: 0;
-
-    aspect-ratio: 8 / 3;
 
     transition: opacity var(--default-duration) 0s,
                 visibility 0s var(--default-duration),
@@ -88,13 +27,42 @@ div#mainContent>div:not(.headline) {
 }
 
 
-div:not(.headline):target {
-    width: calc(100% - 1.5em);
+div#mainContent>div.content:target>div:not(.headline) {
+    margin: 0 auto 2em auto;
+    width: calc(50% - 1.5em);
     height: auto;
     visibility: visible;
     opacity: 1;
 
     transition: width var(--default-duration) calc(var(--start) + 0s),
-                opacity var(--default-duration) calc(var(--start) + var(--default-duration)),
-                visibility 0s calc(var(--start) + var(--default-duration));
-}*/
+                visibility 0s calc(var(--start) + var(--default-duration)),
+                opacity var(--default-duration) calc(var(--start) + var(--default-duration));
+}
+
+div#mainContent>div.content>div.correct-pos {
+    display: block;
+    width: 0;
+    padding: 0;
+    margin: 0;
+    height: auto;
+}
+
+div#mainContent>div.content:target>div:nth-child(even).correct-pos {
+    width: 50%;
+}
+
+div#mainContent>div.content>div:not(.headline)>div{
+    height: 0;
+    overflow-y: hidden;
+}
+
+div#mainContent>div.content:target>div:not(.headline)>div{
+    height: auto;
+    overflow-y: initial;
+}
+
+div#mainContent>div.content {
+    display: flex;
+    flex-wrap: wrap;
+    min-width: calc(360px + 3em);
+}

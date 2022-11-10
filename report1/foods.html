@@ -32,36 +32,28 @@
             <label for="h-menu" class="h-menu mask"></label>
             <div class="content">
                 <div class="uline nowHere">
-                    <a href="">
+                    <a href="index.html">
                         <div>トップへ戻る</div>
                     </a>
                 </div>
                 <div class="uline nowHere">
-                    <label for="target 1"><div>店舗紹介</div></label>
+                    <a href="#meet">
+                        <div>
+                            肉料理
+                        </div>
+                    </a>
                 </div>
                 <div class="uline nowHere">
-                    <label for="target 2"><div>当店のこだわり</div></label>
+                    <a href="#sarad">
+                        <div>
+                            サラダ
+                        </div>
+                    </a>
                 </div>
 
                 <input type="checkbox" id="p-menu 1">
                 <div class="p-menu list">
                     <label for="p-menu 1" class="p-menu ulines">
-                        <div>料理</div>
-                        <div class="icon">
-                            <div class="bar"></div>
-                            <div class="bar"></div>
-                        </div>
-                    </label>
-                </div>
-                <div class="p-menu body" style="--size-of-contents: 1;">
-                    <ul class="p-menu">
-                        <li>肉</li>
-                    </ul>
-                </div>
-
-                <input type="checkbox" id="p-menu 2">
-                <div class="p-menu list">
-                    <label for="p-menu 2" class="p-menu ulines">
                         <div>ドリンク</div>
                         <div class="icon">
                             <div class="bar"></div>
@@ -79,37 +71,114 @@
         </nav>
 
         <div id="mainContent">
-            <a href="#meet"><div class="headline" style="--height: 2em;">店舗紹介</div></label>
+            <span><div class="headline" style="--height: 2em;">店舗紹介</div></span>
+            <div id="" class="content"><!--パスタは1つだけなので常時表示する-->
 
-            <div id="meet">
-                <div class="headline" style="--height: 2em;">店舗の特徴</div>
-                <div>
-                    <div class="imageSelector" style="--amount: 3;">
+            </div>
+            <div id="meet" class="content">
+                <div class="headline" style="--height: 2em;">
+                    <a href="#meet">
+                        <div>
+                            肉料理
+                        </div>
+                    </a>
+                </div>
+                <div class="items">
+                    <div>
+                        プロシュート
+                    </div>
+                    <div class="img-fit">
+                        <img src="./image/640x640_rect_d72a707c331535c4da2af4f1cd6001d3.jpg">
+                    </div>
+                </div>
+                <div class="items">
+                    <div>
+                        パテドカンパーニュ
+                    </div>
+                    <div class="img-fit">
+                        <img src="./image/パテドカンパーニュ.jpg">
+                    </div>
+                </div>
+                <div class="items">
+                    <div>
+                        国産牛
+                    </div>
+                    <div class="imageSelector" style="--amount: 4;">
                         <input type="radio" id="imgSlc 1" style="--itr:1;" name="slct" checked>
                         <input type="radio" id="imgSlc 2" style="--itr:2;" name="slct">
                         <input type="radio" id="imgSlc 3" style="--itr:3;" name="slct">
+                        <input type="radio" id="imgSlc 4" style="--itr:4;" name="slct">
 
                         <div class="leftCont">
-                            <label for="imgSlc 3"></label>
+                            <label for="imgSlc 4"></label>
                             <label for="imgSlc 1"></label>
                             <label for="imgSlc 2"></label>
+                            <label for="imgSlc 3"></label>
                         </div>
                         
                         <div class="rightCont">
                             <label for="imgSlc 2"></label>
                             <label for="imgSlc 3"></label>
+                            <label for="imgSlc 4"></label>
                             <label for="imgSlc 1"></label>
                         </div>
 
                         <div class="img">
-                            <img src="./image/外観.jpg">
-                            <img src="./image/内装１.jpg">
-                            <img src="./image/内装２.jpg">
+                            <img src="./image/国産牛ステーキ.jpg">
+                            <img src="./image/国産業ステーキ２.jpg">
+                            <img src="./image/国産牛ステーキ（イチボ）.jpg">
+                            <img src="./image/国産牛ローストビーフオニオンソース.jpg">
                         </div>
                     </div>
                 </div>
+                <div class="items">
+                    <div>
+                        豚カシラ肉の柔らかグリル
+                    </div>
+                    <div class="img-fit">
+                        <img src="./image/豚カシラ肉の柔らかグリル.jpg">
+                    </div>
+                </div>             
+                <div class="items">
+                    <div>
+                        鴨むね肉のローストオレンジソース
+                    </div>
+                    <div class="img-fit">
+                        <img src="./image/鴨むね肉のローストオレンジソース.jpg">
+                    </div>
+                </div>
+
+                <div class="correct-pos"></div>
+            </div>
+            
+            <div id="sarad" class="content">
+                <div class="headline" style="--height: 2em;">
+                    <a href="#sarad">
+                        <div>
+                            サラダ
+                        </div>
+                    </a>
+                </div>
+                <div class="items">
+                    <div>
+                        サラダ
+                    </div>
+                    <div class="img-fit">
+                        <img src="./image/フレッシュなサラダ.jpg">
+                    </div>
+                </div>
+                <div class="items">
+                    <div>
+                        トマトとモッツァレラチーズ
+                    </div>
+                    <div class="img-fit">
+                        <img src="./image/トマトとモッツァレラチーズ.jpg">
+                    </div>
+                </div>
+                <div class="correct-pos"></div>
             </div>
         </div>
+
         <footer>
             <hr>
             <div id="addr"><div id="post">〒999-999</div><div id="location">奈良氏之市都田沼１２３</div></div>
