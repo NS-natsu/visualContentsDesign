@@ -36,6 +36,13 @@ input[type="checkbox"]#h-menu:checked+header>.h-menu.title {
     width: 50%;
 }
 
+div.h-menu.title>div {
+    top: 50%;
+    transform: translateY(-50%);
+    position: relative;
+    padding-left: 1.5em;
+    width: calc(100% - 1.5em);
+}
 
 /*icon*/
 header>label.h-menu.icon {
