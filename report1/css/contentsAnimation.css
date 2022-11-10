@@ -4,11 +4,13 @@ div#mainContent>div.tgt2.headline{
     width: calc(60% - 1.5em);
     height: 0;
     opacity: 0;
-    margin: 0;
+    margin-top: 0;
+    margin-bottom: 0;
     overflow-y: hidden;
 
     transition: opacity var(--default-duration) 0s,
                 visibility 0s var(--default-duration),
+                margin var(--default-duration) var(--default-duration),
                 height var(--default-duration) var(--default-duration);
 }
 
@@ -20,9 +22,14 @@ div#mainContent>input[type="radio"][id*="target"][id$=" 2"]:checked
     visibility: visible;
     opacity: 1;
 
+    
+    margin-top: 1.5em;
+    margin-bottom: 1.5em;
+
     transition: height var(--default-duration) calc(var(--start) + 0s),
-            opacity var(--default-duration) calc(var(--start) + var(--default-duration)),
-            visibility 0s calc(var(--start) + var(--default-duration));
+                margin var(--default-duration) calc(var(--start) + 0s),
+                opacity var(--default-duration) calc(var(--start) + var(--default-duration)),
+                visibility 0s calc(var(--start) + var(--default-duration));
 }
 
 div#mainContent>div.tgt1:not(.headline),
@@ -53,4 +60,19 @@ div#mainContent>input[type="radio"][id*="target"][id$=" 2"]:checked
     transition: width var(--default-duration) calc(var(--start) + 0s),
                 opacity var(--default-duration) calc(var(--start) + var(--default-duration)),
                 visibility 0s calc(var(--start) + var(--default-duration));
+}
+
+
+div#mainContent>div.tgt1:not(.headline)>div,
+div#mainContent>div.tgt2:not(.headline)>div{
+    height: 0;
+    overflow-y: hidden;
+}
+
+div#mainContent>input[type="radio"][id*="target"][id$=" 1"]:checked
+    ~div.tgt1:not(.headline)>div,
+div#mainContent>input[type="radio"][id*="target"][id$=" 2"]:checked
+    ~div.tgt2:not(.headline)>div{
+    height: auto;
+    overflow-y: initial;
 }

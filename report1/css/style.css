@@ -1,38 +1,45 @@
 :root {
     --default-duration: 0.24s;
+    --header-height: 6%;
 }
 
 body {
     position: relative;
-    margin: 0 auto;
+    margin: 0;
     padding: 0;
-
-    max-width: 960px;
+    width: 100%;
     height: 100%;
+
+    background-color: bisque;
 }
 
 
 div#mainContent, footer {
-    margin-left: 8px;
-    margin-right: 8px;
+    margin: 0 auto;
+    max-width: 960px;
+    width: calc(100% - 3em);/*左右に1文字分の余白*/
     display: block;
     position: relative;
 }
 
 header {
     inset: 0 0 auto 0;
-    height: 10vh;
+    min-height: 6em;
+    height: var(--header-height);
     display: block;
     position: fixed;
     z-index: 50;
 }
 
-header+div#header_offset {
+div#header_offset {
+    content:"";
     display: block;
     position: static;
-    height: 10vh;
+    min-height: 6em;
+    height:var(--header-height);
     width: 100%;
     opacity: 0;
+
 }
 /*
 header > *:nth-child(1){
@@ -47,9 +54,7 @@ header > *:nth-child(3){
 }
 
 div#mainContent {
-    width: inherit;
     position: relative;
-    top: 10%;/*header分*/
     min-height: 80%;
 }
 
