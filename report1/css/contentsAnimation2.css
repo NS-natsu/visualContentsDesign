@@ -68,5 +68,5 @@ div#mainContent>div.content:target>div:not(.headline)>div {
 div#mainContent>div.content {
     display: flex;
     flex-wrap: wrap;
-    min-width: calc(360px + 3em);
+    min-width: calc(360px + var(--margin-hr));
 }

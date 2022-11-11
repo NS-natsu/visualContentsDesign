@@ -39,7 +39,7 @@ div#mainContent>div:not(.headline)>*:not(.imageSelector){
 div#mainContent>div.tgt1.headline,
 div#mainContent>div.tgt2.headline{
     --start: 0s;
-    width: calc(60% - 1.5em);
+    width: calc(60% - var(--margin-hr) / 2);
     height: 0;
     opacity: 0;
     padding-top: 0;
@@ -61,7 +61,6 @@ div#mainContent>input[type="radio"][id*="target"][id$=" 2"]:checked
     visibility: visible;
     opacity: 1;
 
-    
     padding-top: 1.5em;
     margin-bottom: 1.5em;
 
@@ -113,6 +112,49 @@ div#mainContent>input[type="radio"][id*="target"][id$=" 1"]:checked
     ~div.tgt1:not(.headline)>div,
 div#mainContent>input[type="radio"][id*="target"][id$=" 2"]:checked
     ~div.tgt2:not(.headline)>div{
-    height: auto;
-    overflow-y: initial;
+    height: 100%;
+    overflow-y: auto;
+}
+
+div#mainContent>label[for*="target"]{
+    display: block;
+    position: relative;
+    /*background-color: rgba(0, 0, 0, .1);*/
+    width: calc(60% + .5em);
+}/*
+div#mainContent>label[for*="target"]:hover{
+    background-color: rgba(0, 0, 0, .2);
+}*/
+div#mainContent>label[for*="target"]>div.headline{
+    width: calc(100% - .5em);
+}
+
+div#mainContent>input[type="radio"][id*="target"][id$=" 1"]:not(:checked)
+    ~label[for*="target"][for$=" 1"]::after,
+div#mainContent>input[type="radio"][id*="target"][id$=" 2"]:not(:checked)
+    ~label[for*="target"][for$=" 2"]::after{
+    content: "";
+    position: absolute;
+    pointer-events:none;
+    height: 100%;
+    aspect-ratio: 1 / 1;
+    inset: 0;
+    left: 100%;
+    transform: translate(-100%, 0) rotate(-90deg);
+    background-image: url("../image/arrow.svg");
+    background-size: 100% 100%;
+    animation-name: click;
+    animation-duration: 1s;
+    animation-direction: alternate;
+    animation-iteration-count: infinite;
+    animation-timing-function: linear;
+}
+
+@keyframes click {
+    from {
+        transform: translate(-100%, -.25em) rotate(-90deg);
+    }
+    to {
+        transform: translate(-100%, .25em) rotate(-90deg);
+    }
 }

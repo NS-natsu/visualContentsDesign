@@ -1,0 +1,36 @@
+div#mainContent>div.content>div.headline {
+    display: block;
+    position: relative;
+    /*background-color: rgba(0, 0, 0, .1);*/
+}/*
+div#mainContent>div.content>div.headline:hover{
+    background-color: rgba(0, 0, 0, .2);
+}*/
+
+div#mainContent>div.content:not(:target)
+    >div.headline::after{
+    content: "";
+    position: absolute;
+    pointer-events:none;
+    height: 100%;
+    aspect-ratio: 1 / 1;
+    inset: 0;
+    left: 100%;
+    transform: translate(-100%, 0) rotate(-90deg);
+    background-image: url("../image/arrow.svg");
+    background-size: 100% 100%;
+    animation-name: click;
+    animation-duration: 1s;
+    animation-direction: alternate;
+    animation-iteration-count: infinite;
+    animation-timing-function: linear;
+}
+
+@keyframes click {
+    from {
+        transform: translate(-100%, -.25em) rotate(-90deg);
+    }
+    to {
+        transform: translate(-100%, .25em) rotate(-90deg);
+    }
+}

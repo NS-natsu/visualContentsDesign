@@ -21,6 +21,7 @@ div#header_offset {
 }
 
 footer {
+    height: 10%;
     background-color: rgba(205, 178,146, 1);
 }
 
@@ -48,12 +49,6 @@ div#header_offset {
     min-height: 6em;
     height:var(--header-height);
 }
-/*
-header > *:nth-child(1){
-    position: absolute;
-    width: 100%;
-    height: 100%;
-}*/
 
 header > *:nth-child(3){
     inset: 0 0 0 auto;
@@ -63,10 +58,7 @@ header > *:nth-child(3){
 div#mainContent {
     position: relative;
     min-height: 80%;
-}
-
-footer {
-    height: 10%;
+    padding-bottom: 1em;
 }
 
 .uline {
@@ -92,14 +84,6 @@ footer {
     background-color: rgba(255, 255, 255, .4);
 }
 
-/*div#mainContent > div{
-    width: 100%;
-    min-height: 200px;
-    background-image: url("../image/外観.jpg");
-    background-size: cover;
-    background-repeat: no-repeat;
-    background-position: 0 -80px;
-}*/
 ul, li {
     list-style: none;
     margin: .5em 0;
@@ -120,8 +104,9 @@ li {
 }
 
 div#mainContent>div {
-    margin-left: 1.5em;
-    margin-right: 1.5em;
+    --margin-hr: 3em;
+    margin-left: calc(var(--margin-hr) / 2);
+    margin-right: calc(var(--margin-hr) / 2);
 }
 
 .headline {
@@ -130,7 +115,7 @@ div#mainContent>div {
     width: 60%;
     height: var(--height);
     border-bottom: 1px solid gray;
-    padding-top: 1.5em;
+    padding: 1.5em 0 0 .5em;
     margin-bottom: 1.5em;
 }
 
@@ -178,4 +163,10 @@ label {
 a {
     text-decoration: none;
     color: inherit;
+}
+
+hr {
+    width: calc(100% - 2px);
+    background-color: gray;
+    border: 1px solid gray;
 }
