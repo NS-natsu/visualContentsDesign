@@ -18,7 +18,6 @@ class smoothScroll{
             this.amount = Math.abs(this.amount);
         }
         
-        console.log(this);
         this.obj = setInterval(this.run, this.interval, this);
     }
 

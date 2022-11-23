@@ -19,8 +19,25 @@ function scrollEvent(elm){
     winOver();
 }
 
+function resize(){
+    let width = document.getElementsByTagName("body")[0].clientWidth - document.getElementById("mainContent").clientWidth;
+    width /= 2;
+    let css = document.querySelectorAll("#h-menu-body");
+    css[0].style.width = width + "px";
+
+    css = document.querySelectorAll("#h-menu-body a");
+    for(let c of css){
+        c.style.paddingLeft = width+"px";
+    }
+}
+
+function resizeEvent(elm){
+    resize();
+    scrollEvent(elm)
+}
+
 window.addEventListener('load', scrollEvent);
-window.addEventListener('resize', scrollEvent);
+window.addEventListener('resize', resizeEvent);
 window.addEventListener('scroll', scrollEvent, { passive: true });
 
 const smooth = new smoothScroll();
@@ -32,6 +49,8 @@ document.addEventListener("DOMContentLoaded", function (){
 
     let al = document.getElementsByClassName("action");
     for(let act of al) {actList.push(act);}
+
+    resize();
 
     const trigger = document.querySelectorAll('a[href^="#"]');
     for(let t of trigger){
