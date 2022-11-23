@@ -1,0 +1,88 @@
+#h-menu-button {
+    position: relative;
+    height: 48px;
+    width: 48px;
+    background-color: var(--color);
+
+    top: 50%;
+    transform: translateY(-50%);
+
+    left: 1rem;
+
+    border-radius: 30%;
+}
+
+#h-menu-button>.bar {
+    position: absolute;
+    background-color: black;
+    left: 50%;
+    width: calc(100% - 8px);
+    height: 4px;
+
+    border-radius: 30%;
+    transition: 0.24s;
+}
+#h-menu-button>.bar:nth-child(1) {
+    top: 8px;
+    transform: translateX(-50%);
+}
+#h-menu-button>.bar:nth-child(2) {
+    top: 50%;
+    transform: translate(-50%, -50%);
+}
+#h-menu-button>.bar:nth-child(3) {
+    top: 100%;
+    transform: translate(-50%, calc(-100% - 8px));
+}
+
+#h-menu-button.open>.bar:nth-child(1) {
+    top: 50%;
+    width: 130%;
+    transform: translate(-50%, -50%) rotate(135deg);
+}
+#h-menu-button.open>.bar:nth-child(2) {
+    top: 100%;
+    opacity: 0;
+}
+#h-menu-button.open>.bar:nth-child(3) {
+    top: 50%;
+    width: 130%;
+    transform: translate(-50%, -50%) rotate(-135deg);
+}
+
+#h-menu-body {
+    position: fixed;
+    min-width: 1rem;
+    width: 1rem;
+    height: 100%;
+    background-color: var(--color);
+    overflow-x: hidden;
+    transition: width 1s, min-width 1s;
+    z-index: 5;
+}
+#h-menu-body.open {
+    min-width: calc(20rem);
+    width: calc(20% + 1rem);
+}
+#h-menu-body::before{
+    content: "";
+    position: static;
+    display:block;
+    min-height: 48px;
+    max-height: 5rem;
+    height: 10vh;
+}
+#h-menu-body>*{
+    height: 3rem;
+    transition: background-color .24s;
+}
+#h-menu-body a {
+    display: block;
+    padding: 1rem;
+    font-size: 1rem;
+    padding-right: 0;
+    text-decoration: none;
+    color: black;
+    overflow: hidden;
+    white-space: nowrap;
+}

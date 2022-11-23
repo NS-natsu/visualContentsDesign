@@ -1,0 +1,134 @@
+:root {
+    --max-width: 960px;
+    --color: #745030;
+    --color1: rgba(205, 178,146, 1);
+}
+
+body {
+    width: 100%;
+    height: 100%;
+
+    background-image: url(../image/stone.jpg);
+}
+
+*{
+    margin:0;
+    padding:0;
+}
+
+#mainContent {
+    max-width: var(--max-width);
+
+    width: calc(100% - 2rem);
+    height: 100%;
+    margin: auto;
+
+    background-color: rgba(255, 228,196, .95);
+}
+#mainContent>*:not(.heading){
+    margin-left: 1rem;
+}
+
+header {
+    inset: 0;
+    position: fixed;
+    background-color: var(--color);
+    background: linear-gradient(black 50%, rgba(0, 0, 0, .9) 75%, rgba(0, 0, 0, .5));
+
+    z-index: 10;
+}
+
+header::before{
+    content: "";
+    position:absolute;
+    width: 100%;
+    height: 100%;
+    background-repeat: no-repeat;
+    background-size: auto 100%;
+    background-position: 50%;
+    background-image: url(../image/name.svg);
+}
+
+header,
+#mainContent::before{
+    content: "";
+    display: block;
+    min-height: 48px;
+    max-height: 5rem;
+    height: 10vh;
+    width: 100%;
+}
+
+.pick {
+    background-color: rgba(255, 255, 255, .6);
+}
+
+.heading {
+    padding-top:1rem;
+    padding-left: .5rem;
+    margin-bottom: .5rem !important;
+    border-bottom: gray solid 2px;
+    font-size: 2rem;
+}
+
+.content {
+    display:flex;
+    flex-wrap: wrap;
+    padding-bottom: .5rem;
+}
+.content>* {
+    width: calc(50% - 2rem);
+    margin: 0 auto;
+}
+
+.content>.heading {
+    padding-top:0;
+    width: calc(100% - 1rem);
+    order: 0;
+    font-size: 1.5rem;
+}
+.content>.con-left {
+    order: 1;
+}
+.content>.con-right {
+    order:2;
+}
+
+ul, li {
+    list-style: none;
+    margin: .5rem 0;
+}
+
+li {
+    padding-left: 1.5rem;
+}
+
+.enable-style>li{
+    list-style: inside;
+    margin: 0;
+}
+
+.wide-margin>ul,
+.wide-margin>li {
+    margin: 1.5rem 0;
+}
+
+hr {
+    width: calc(100% - 2px);
+    background-color: gray;
+    border: 1px solid gray;
+}
+
+footer {
+    height: 10%;
+    background-color: rgba(205, 178,146, 1);
+    margin: 0 auto;
+    max-width: 960px;
+    width: calc(100% - 2em);
+    display: block;
+    position: relative;
+}
+
+.uline {
+    border-bottom: rgba(0, 0, 0, .4) solid 2px;
+}

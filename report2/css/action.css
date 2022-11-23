@@ -1,0 +1,27 @@
+.action {
+    transition-property: opacity, transform;
+    transition-duration: 1s;
+    position:relative;
+}
+
+.move-in-top {
+    transform: translateY(-50%);
+}
+.move-in-left {
+    transform: translateX(-50%);
+}
+.move-in-right {
+    transform: translateX(50%);
+}
+.move-in-bottom {
+    transform: translateY(50%);
+}
+
+.feed-in {
+    opacity: 0;
+}
+
+.visible {
+    opacity: 1;
+    transform: none;
+}
