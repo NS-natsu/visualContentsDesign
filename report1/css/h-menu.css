@@ -90,7 +90,7 @@ header>label.h-menu.icon {
 	transform: translateX(-100%);
 }
 _::-webkit-full-page-media, _:future, :root header>label.h-menu.icon {
-	width: var(--header-height);
+	width: calc(var(--header-height)*1.1);
 }
 
 label.h-menu .icon {
