@@ -1,160 +1,158 @@
 :root {
-    --default-duration: 0.24s;
+	--default-duration: 0.24s;
 }
 
 /*ラジオボタンの見た目*/
 .imageSelector>input[type="radio"]::before,
 .imageSelector>input[type="radio"]::after {
-    content: "";
-    height: 100%;
-    aspect-ratio: 1 / 1;
-    position: absolute;
-    inset: 50% auto auto 50%;
-    transform: translateX(-50%) translateY(-50%);
-    
-    border-radius: 50%;
-    background-color: white;
-    z-index: 2;
-}
-
-_::-webkit-full-page-media, _:future, :root .imageSelector>input[type="radio"]::before {
-    display: none;
-}
-_::-webkit-full-page-media, _:future, :root .imageSelector>input[type="radio"]::after {
-    display: none;
+	content: "";
+	height: 100%;
+	aspect-ratio: 1 / 1;
+	position: absolute;
+	inset: 50% auto auto 50%;
+	transform: translateX(-50%) translateY(-50%);
+	
+	border-radius: 50%;
+	background-color: white;
+	z-index: 2;
 }
 
 .imageSelector>input[type="radio"]::after {
-    opacity: 0;
-    transition: opacity calc(2*var(--default-duration));
-    background-color: gray;
+	opacity: 0;
+	transition: opacity calc(2*var(--default-duration));
+	background-color: gray;
 }
 
 .imageSelector>input[type="radio"]:checked::after {
-    opacity: 1;
+	opacity: 1;
 }
 
 .imageSelector {
-    display: block;
-    position: relative;
-    background-color: black;
-    min-width: 180px;
-    
-    aspect-ratio: 4 / 3;
+	display: block;
+	position: relative;
+	background-color: black;
+	min-width: 180px;
+	
+	aspect-ratio: 4 / 3;
 }
 
 .imageSelector>* {
-    position: absolute;
-    margin: 0;
-    padding: 0;
+	position: absolute;
+	margin: 0;
+	padding: 0;
 }
 
 .imageSelector>input[type="radio"] {
-    top: calc(100% - 1px);
-    transform: translateY(-100%);
-    left: calc(calc(var(--itr) - 1) * calc(100% / var(--amount)));
-    width: calc(100% / var(--amount));
-    pointer-events: none;
-    z-index: 3;
-    align-content: center;
+	top: calc(100% - .5em);
+	transform: translateY(-100%);
+	left: calc(calc(var(--itr) - 1) * calc(100% / var(--amount)));
+	width: calc(100% / var(--amount));
+	pointer-events: none;
+	z-index: 3;
+	align-content: center;
+}
+
+_::-webkit-full-page-media, _:future, :root .imageSelector>input[type="radio"] {
+	width: unset;
+	left: calc(calc(calc(var(--itr) - .5) * calc(100% / var(--amount))) - .5em);
 }
 
 .imageSelector>div:not(.img) {
-    inset: 0 auto auto 0;
-    min-width: 1em;
-    width: 10%;
-    height: 100%;
-    opacity: .2;
-    z-index: 2;
+	inset: 0 auto auto 0;
+	min-width: 1em;
+	width: 10%;
+	height: 100%;
+	opacity: .2;
+	z-index: 2;
 
-    transition: opacity var(--default-duration);
+	transition: opacity var(--default-duration);
 
-    background-color: black;
-    background-image: url("../image/arrow.svg");
-    background-repeat: no-repeat;
-    background-size: 100% auto;
-    background-position: center;
+	background-color: black;
+	background-image: url("../image/arrow.svg");
+	background-repeat: no-repeat;
+	background-size: 100% auto;
+	background-position: center;
 }
 
 .imageSelector:hover>div:not(.img){
-    opacity: .5;
+	opacity: .5;
 }
 
 .imageSelector:hover>div:not(.img):hover{
-    opacity: .9;
+	opacity: .9;
 }
 
 .imageSelector>div:not(.img)>label{
-    position: absolute;
-    pointer-events: none;
-    display: block;
-    width: 100%;
-    height: 100%;
+	position: absolute;
+	pointer-events: none;
+	display: block;
+	width: 100%;
+	height: 100%;
 }
 
 .imageSelector>div.rightCont{
-    transform: scale(-1, 1);
-    inset: 0 0 auto auto;
+	transform: scale(-1, 1);
+	inset: 0 0 auto auto;
 }
 
 .imageSelector>input[type="radio"][id$=" 1"]:checked
-    ~div:not(.img)>*:nth-child(1) {
-    pointer-events: auto;
+	~div:not(.img)>*:nth-child(1) {
+	pointer-events: auto;
 }
 .imageSelector>input[type="radio"][id$=" 2"]:checked
-    ~div:not(.img)>*:nth-child(2) {
-    pointer-events: auto;
+	~div:not(.img)>*:nth-child(2) {
+	pointer-events: auto;
 }
 .imageSelector>input[type="radio"][id$=" 3"]:checked
-    ~div:not(.img)>*:nth-child(3) {
-    pointer-events: auto;
+	~div:not(.img)>*:nth-child(3) {
+	pointer-events: auto;
 }
 .imageSelector>input[type="radio"][id$=" 4"]:checked
-    ~div:not(.img)>*:nth-child(4) {
-    pointer-events: auto;
+	~div:not(.img)>*:nth-child(4) {
+	pointer-events: auto;
 }
 .imageSelector>input[type="radio"][id$=" 5"]:checked
-    ~div:not(.img)>*:nth-child(5) {
-    pointer-events: auto;
+	~div:not(.img)>*:nth-child(5) {
+	pointer-events: auto;
 }
 
 .imageSelector>div.img {
-    width: 100%;
-    position: initial;
+	width: 100%;
+	position: initial;
 }
 
 .imageSelector>div.img>* {
-    opacity: 0;
-    transition: opacity var(--default-duration);
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    /*
-    max-width:100%;
-    max-height:100%;
-    */
-    position: absolute;
-    inset: 50% 0 0 50%;
-    transform: translateY(-50%) translateX(-50%);
+	opacity: 0;
+	transition: opacity var(--default-duration);
+	width: 100%;
+	height: 100%;
+	object-fit: cover;
+	/*
+	max-width:100%;
+	max-height:100%;
+	*/
+	position: absolute;
+	inset: 50% 0 0 50%;
+	transform: translateY(-50%) translateX(-50%);
 }
 
 .imageSelector>input[type="radio"][id$=" 1"]:checked
-    ~div.img>*:nth-child(1) {
-    opacity: 1;
+	~div.img>*:nth-child(1) {
+	opacity: 1;
 }
 .imageSelector>input[type="radio"][id$=" 2"]:checked
-    ~div.img>*:nth-child(2) {
-    opacity: 1;
+	~div.img>*:nth-child(2) {
+	opacity: 1;
 }
 .imageSelector>input[type="radio"][id$=" 3"]:checked
-    ~div.img>*:nth-child(3) {
-    opacity: 1;
+	~div.img>*:nth-child(3) {
+	opacity: 1;
 }
 .imageSelector>input[type="radio"][id$=" 4"]:checked
-    ~div.img>*:nth-child(4) {
-    opacity: 1;
+	~div.img>*:nth-child(4) {
+	opacity: 1;
 }
 .imageSelector>input[type="radio"][id$=" 5"]:checked
-    ~div.img>*:nth-child(5) {
-    opacity: 1;
+	~div.img>*:nth-child(5) {
+	opacity: 1;
 }
