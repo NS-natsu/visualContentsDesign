@@ -24,13 +24,6 @@ _::-webkit-full-page-media, _:future, :root .imageSelector>input[type="radio"]::
     display: none;
 }
 
-@media screen and (-webkit-min-device-pixel-ratio:0) {
-    .imageSelector>input[type="radio"]::before,
-    .imageSelector>input[type="radio"]::after {
-        display: none;
-    }
-}
-
 .imageSelector>input[type="radio"]::after {
     opacity: 0;
     transition: opacity calc(2*var(--default-duration));
